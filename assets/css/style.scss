@@ -1,0 +1,10 @@
+---
+---
+
+@import "minima/skins/{{ site.minima.skin | default: 'classic' }}";
+@import "minima/initialize";
+
+.site-header {
+  background-color: #f61600;
+  color: #ffffff;
+}
