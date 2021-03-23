@@ -1,6 +1,4 @@
 library(tidyverse)
-library(janitor)
-library(skimr)
 library(tmap)
 library(sf)
 
@@ -70,8 +68,8 @@ pop_dens_map <-
               style ="quantile",
               n = 5,
               palette ="-inferno",
-              title =c("Immigrant Population Density",
-                       "Overall Population Density")) +
+              title =c("Immigrant",
+                       "Overall")) +
   tm_facets(nrow=2,ncol=1) +
   tm_layout(main.title="Population Density 2016",
             main.title.size =.9,

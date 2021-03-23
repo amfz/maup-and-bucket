@@ -1,6 +1,5 @@
 library(tidyverse)
 library(janitor)
-library(skimr)
 library(sf)
 
 # some type fixing
