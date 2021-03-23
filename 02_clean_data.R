@@ -109,4 +109,4 @@ full_data$all_imm <- full_data$imm_pop + full_data$non_pr_pop
 
 full_data$percent_imm <- 
   (full_data$all_imm / 
-     (full_data$imm_pop + full_data$all_imm)) * 100
+     (full_data$non_imm_pop + full_data$all_imm)) * 100
