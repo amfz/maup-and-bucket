@@ -46,21 +46,22 @@ imm_dens_map <-
                 "non_pr_pop"),
               #convert2density = TRUE,
               #area = "sq_km",
-              style ="quantile",
+              style ="jenks",
               n = 5,
               palette ="-inferno",
-              title =c("All Immigrant Population",
+              title =c("All Immigrant Pop.",
                        "% Immigrant",
-                       "Permanent Immigrant Population",
-                       "Non-Permanent Immigrant Population")) +
+                       "Perm. Imm. Pop.",
+                       "Non-Perm. Imm.Pop.")) +
   tm_facets(nrow=2,ncol=2) +
-  tm_layout(main.title="Immigration in Toronto, 2016",
+  tm_layout(main.title="Immigration in Toronto, 2016 - Jenks",
             main.title.size =.9,
-            legend.text.size=.7,
-            legend.position =c("right","bottom"),
+            legend.text.size=.65,
+            legend.position =c("right", "bottom"),
             attr.outside =TRUE)
 
 print(imm_dens_map)
+
 
 pop_dens_map <-
   tm_shape(full_data) +
