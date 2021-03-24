@@ -6,19 +6,19 @@ It's no secret that Toronto is a diverse, international city. Though areas in Sc
 
 ![](img/density_map.png)
 
-1.**North St.James Town**  
-2. **Church-Yonge Corridor**  
-3. **Mount Pleasant West**  
-4. **Taylor-Massey**  
-5. **Bay Street Corridor**  
-6. **Regent Park**  
-7. **Willowdale East**  
-8. **Flemingdon Park**  
-9. **Kensington-Chinatown**  
-10. **Moss Park**  
+**1. North St.James Town**  
+**2. Church-Yonge Corridor**  
+**3. Mount Pleasant West**  
+**4. Taylor-Massey**  
+**5. Bay Street Corridor**  
+**6. Regent Park**  
+**7. Willowdale East**  
+**8. Flemingdon Park**  
+**9. Kensington-Chinatown**  
+**10. Moss Park**  
 
   
-    
+  
   
 ---
 
@@ -26,7 +26,12 @@ It's no secret that Toronto is a diverse, international city. Though areas in Sc
 
 I chose to work with immigration data in Toronto because of the richness of the Toronto neighbourhood profile dataset. The dataset is available on the Toronto Open Data portal; it consists of thousands of demographic and socioeonomic characteristics from the 2016 Census aggregated to the neighborhood level by the city's Social Policy Analysis and Research Unit. The 140 neighbourhoods defined in the data are built up from census tracts based on several rules and considerations, including historical planning area divisions, service boundaries, and dividing arterials like highways and rivers. While originally created to help local planning efforts, the geographies have embedded themselves in the popular imagination enough that the announcement of 34 new neighbourhoods [made it to BlogTO](https://www.blogto.com/city/2021/03/toronto-changing-boundaries-create-34-new-neighbourhoods/).
 
-Ideas for a misleading visualization fell into a few categories: bad statistical analysis, suspect data aggregation, and questionable framing. The neighbourhood profile dataset's 2383 variables are rife with opportunities for spurious correlations and inappropriate statistical methods. On the data aggregation side, ideas included binning continuous variables in unusual ways, creatively combining categories (e.g., by conflating first- and second-generation immigrant counts), and exploiting the Modifiable Areal Unit Problem, which stipulates that how one divides space affects descriptions and analytical results (e.g., by aggregating the neighbourhoods to the level of former boroughs).
+Ideas for a misleading visualization fell into a few categories: bad statistical analysis, suspect data aggregation, and questionable framing. The neighbourhood profile dataset's 2383 variables are rife with opportunities for spurious correlations and inappropriate statistical methods. On the data aggregation side, ideas included binning continuous variables in unusual ways, playing with symbology styles, creatively combining categories (e.g., by conflating first- and second-generation immigrant counts), and exploiting the Modifiable Areal Unit Problem, which stipulates that how one divides space affects descriptions and analytical results (e.g., by aggregating the neighbourhoods to the level of former boroughs).
+
+|The same data, symbolized two ways |
+|---|---|
+|Quintile Bins|Jenks Bins|
+|![](img/quantile_drafts.jpg)|![img](img/jenks_drafts.jpg)|
 
 I iterated through maps in R before settling on creating a single map embedded in a clickbait-y listicle. Doing so was an opportunity to pair a poor data wrangling choice with some of ad-driven web publishing's most annoying tendencies: sensationalist headlines, careless copy, and uncritical circulation of data-driven material. The result is a misleading take meant for a casual, Toronto-based audience that is only probably half-paying attention.
 
