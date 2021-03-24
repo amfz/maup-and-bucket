@@ -88,6 +88,7 @@ profiles$neighborhood_number <-
 # get neighborhood attributes joined to shapes
 nhoods <-neighborhoods%>%left_join(profiles,by="neighborhood_number")
 
+# rename columns
 full_data <- 
   nhoods %>%
   rename(pop_2016 = x3_population_and_dwellings_population_2016,
@@ -104,8 +105,16 @@ full_data <-
          non_pr_pop = x1162_immigrant_status_and_period_of_immigration_non_permanent_residents) %>%
   clean_names()
 
+
+# add extra columns for immigrant population figures
 full_data$all_imm <- full_data$imm_pop + full_data$non_pr_pop
 
 full_data$percent_imm <- 
   (full_data$all_imm / 
      (full_data$non_imm_pop + full_data$all_imm)) * 100
+
+full_data$imm_dens <- 
+  round(full_data$all_imm / full_data$sq_km)
+
+# Export data
+st_write(full_data, "data/to_data.geojson")

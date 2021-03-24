@@ -25,7 +25,6 @@ demo_map <-
                        "Average\nhousehold size",
                        "Low income %",
                        "Unaffordable\nhousing %",
-                       "",
                        "Immigrant Population",
                        "Non Immigrant Population",
                        "% Immigrant")) +
@@ -42,14 +41,16 @@ print(demo_map)
 imm_dens_map <-
   tm_shape(full_data) +
   tm_polygons(c("all_imm",
+                "percent_imm",
                 "imm_pop",
                 "non_pr_pop"),
-              convert2density = TRUE,
-              area = "sq_km",
+              #convert2density = TRUE,
+              #area = "sq_km",
               style ="quantile",
               n = 5,
               palette ="-inferno",
               title =c("All Immigrant Population",
+                       "% Immigrant",
                        "Permanent Immigrant Population",
                        "Non-Permanent Immigrant Population")) +
   tm_facets(nrow=2,ncol=2) +
